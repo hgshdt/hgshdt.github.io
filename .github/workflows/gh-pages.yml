@@ -16,7 +16,7 @@ jobs:
         with:
           repository: ${{ env.FROM_REPO_USER }}/${{ env.FROM_REPO_NAME }}
           token: ${{ secrets.MY_GITHUB_TOKEN }}
-          ref: master
+          ref: main
           path: ./From
       - name: Setup Node
         uses: actions/setup-node@v2
