@@ -12,7 +12,6 @@ jobs:
       FROM_REPO_NAME: 'nextjs-portfolio'
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/checkout@v2
         with:
           repository: ${{ env.FROM_REPO_USER }}/${{ env.FROM_REPO_NAME }}
           token: ${{ secrets.MY_GITHUB_TOKEN }}
