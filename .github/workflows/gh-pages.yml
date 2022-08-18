@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       FROM_REPO_USER: 'hgshdt'
-      FROM_REPO_NAME: 'nextjs-portfolio'
+      FROM_REPO_NAME: 'portfolio'
     steps:
       - uses: actions/checkout@v2
         with:
@@ -28,9 +28,9 @@ jobs:
         working-directory: ./From
         run: |
           npm run build
-          touch out/.nojekyll
+          touch dist/.nojekyll
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./From/out
+          publish_dir: ./From/dist
