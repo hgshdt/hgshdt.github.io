@@ -28,9 +28,9 @@ jobs:
         working-directory: ./From
         run: |
           npm run build
-          touch dist/.nojekyll
+          touch build/.nojekyll
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          publish_dir: ./From/dist
+          publish_dir: ./From/build
