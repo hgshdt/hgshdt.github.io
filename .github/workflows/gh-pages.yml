@@ -11,16 +11,16 @@ jobs:
       FROM_REPO_USER: 'hgshdt'
       FROM_REPO_NAME: 'portfolio'
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           repository: ${{ env.FROM_REPO_USER }}/${{ env.FROM_REPO_NAME }}
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
           ref: master
           path: ./From
       - name: Setup Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '18'
       - name: Install
         working-directory: ./From
         run: npm install
